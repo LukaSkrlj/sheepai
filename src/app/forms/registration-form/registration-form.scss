@@ -1,0 +1,10 @@
+.p-card { margin-bottom: 2rem; }
+.form-grid { display: grid; gap: 1rem 1.25rem; }
+.p-field { display: flex; flex-direction: column; }
+.p-field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.checkbox-row { display: flex; align-items: center; gap: .5rem; }
+.actions { display: flex; justify-content: flex-end; margin-top: .5rem; }
+
+@media (max-width: 768px) {
+  .p-field-group { grid-template-columns: 1fr; }
+}

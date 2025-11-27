@@ -1,0 +1,45 @@
+<p-card header="Address" subheader="Complete address template with validation">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid form-grid">
+    <div class="p-field">
+      <label for="name">Recipient Name</label>
+      <input id="name" pInputText formControlName="name" placeholder="Alan Turing" />
+      <small class="p-error" *ngIf="form.controls['name'].touched && form.controls['name'].invalid">Name is required.</small>
+    </div>
+
+    <div class="p-field">
+      <label for="street">Street Address</label>
+      <input id="street" pInputText formControlName="street" placeholder="123 Main St" />
+      <small class="p-error" *ngIf="form.controls['street'].touched && form.controls['street'].invalid">Street is required.</small>
+    </div>
+
+    <div class="p-field-group">
+      <div class="p-field">
+        <label for="city">City</label>
+        <input id="city" pInputText formControlName="city" placeholder="Metropolis" />
+        <small class="p-error" *ngIf="form.controls['city'].touched && form.controls['city'].invalid">City is required.</small>
+      </div>
+
+      <div class="p-field">
+        <label for="country">Country</label>
+        <p-select inputId="country" [options]="countries" formControlName="country" optionLabel="label" optionValue="value"></p-select>
+      </div>
+
+      <div class="p-field" *ngIf="isUS">
+        <label for="state">State</label>
+        <p-select inputId="state" [options]="statesUS" formControlName="state" optionLabel="label" optionValue="value"></p-select>
+        <small class="p-error" *ngIf="form.controls['state'].touched && form.controls['state'].invalid">State is required.</small>
+      </div>
+
+      <div class="p-field">
+        <label for="zip">ZIP/Postal Code</label>
+        <input id="zip" pInputText formControlName="zip" placeholder="e.g. 94105" />
+        <small class="p-error" *ngIf="form.controls['zip'].touched && form.controls['zip'].invalid">Enter a valid code.</small>
+      </div>
+    </div>
+
+    <div class="actions">
+      <p-button type="submit" label="Save" icon="pi pi-save"></p-button>
+    </div>
+  </form>
+</p-card>
+<p-toast></p-toast>

@@ -1,0 +1,6 @@
+.p-card { margin-bottom: 2rem; }
+.form-grid { display: grid; gap: 1rem 1.25rem; }
+.p-field { display: flex; flex-direction: column; }
+.radio-group, .checkbox-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+.radio-item, .checkbox-item { display: inline-flex; align-items: center; gap: .5rem; }
+.actions { display: flex; justify-content: flex-end; margin-top: .5rem; }

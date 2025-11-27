@@ -1,0 +1,77 @@
+<p-card header="Create Account" subheader="A solid signup template with validation">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid form-grid">
+
+    <!-- Full Name -->
+    <div class="p-field">
+      <label for="name">Full Name</label>
+      <input id="name" pInputText formControlName="name" placeholder="Grace Hopper" />
+
+      @if (this.f['name'].touched && this.f['name'].invalid) {
+        <small class="p-error">Name is required.</small>
+      }
+    </div>
+
+    <!-- Email -->
+    <div class="p-field">
+      <label for="email">Email</label>
+      <input id="email" pInputText type="email" formControlName="email" placeholder="grace@example.com" />
+
+      @if (this.f['email'].touched && this.f['email'].invalid) {
+        <small class="p-error">Valid email is required.</small>
+      }
+    </div>
+
+    <!-- Password + Confirm -->
+    <div class="p-field-group">
+
+      <!-- fix -->
+      <div class="p-field">
+        <label for="password">Password</label>
+        <p-password
+          id="password"
+          formControlName="password"
+          [toggleMask]="true"
+          [feedback]="true"
+          [inputStyle]="{ width: '100%' }">
+        </p-password>
+
+        @if (this.c['password'].touched && this.c['password'].invalid) {
+          <small class="p-error">Min 8 characters.</small>
+        }
+      </div>
+
+      <div class="p-field">
+        <label for="confirmPassword">Confirm Password</label>
+        <p-password
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          [toggleMask]="true"
+          [feedback]="false"
+          [inputStyle]="{ width: '100%' }">
+        </p-password>
+
+        @if (credentials.touched && credentials.errors?.['passwordMismatch']) {
+          <small class="p-error">Passwords do not match.</small>
+        }
+      </div>
+
+    </div>
+
+    <!-- Terms -->
+    <div class="p-field checkbox-row">
+      <p-checkbox [binary]="true" formControlName="terms" inputId="terms"></p-checkbox>
+      <label for="terms">I agree to the terms and privacy policy.</label>
+
+      @if (this.f['terms'].touched && this.f['terms'].invalid) {
+        <small class="p-error">Required.</small>
+      }
+    </div>
+
+    <div class="actions">
+      <p-button type="submit" label="Sign up" icon="pi pi-user-plus"></p-button>
+    </div>
+
+  </form>
+</p-card>
+
+<p-toast></p-toast>

@@ -1,0 +1,122 @@
+<div class="forms-container">
+  <!-- Form Selection View -->
+  <div *ngIf="!selectedForm" class="form-selection">
+    <h1>Form Templates</h1>
+    <p class="subtitle">Select a form template to view and customize</p>
+
+    <div class="forms-grid">
+      <p-card class="form-card">
+        <ng-template pTemplate="header">
+          <div class="card-icon contact">📋</div>
+        </ng-template>
+        <h3>Contact Form</h3>
+        <p>Collect inquiries, messages, and contact information</p>
+        <p-button
+          label="View Template"
+          icon="pi pi-arrow-right"
+          (onClick)="selectForm('contact')"
+          [rounded]="true"
+          [text]="true"
+        ></p-button>
+      </p-card>
+
+      <p-card class="form-card">
+        <ng-template pTemplate="header">
+          <div class="card-icon registration">👤</div>
+        </ng-template>
+        <h3>Registration Form</h3>
+        <p>User signup with email, password, and agreements</p>
+        <p-button
+          label="View Template"
+          icon="pi pi-arrow-right"
+          (onClick)="selectForm('registration')"
+          [rounded]="true"
+          [text]="true"
+        ></p-button>
+      </p-card>
+
+      <p-card class="form-card">
+        <ng-template pTemplate="header">
+          <div class="card-icon survey">⭐</div>
+        </ng-template>
+        <h3>Survey Form</h3>
+        <p>Collect feedback with ratings, checkboxes, and options</p>
+        <p-button
+          label="View Template"
+          icon="pi pi-arrow-right"
+          (onClick)="selectForm('survey')"
+          [rounded]="true"
+          [text]="true"
+        ></p-button>
+      </p-card>
+
+      <p-card class="form-card">
+        <ng-template pTemplate="header">
+          <div class="card-icon address">📍</div>
+        </ng-template>
+        <h3>Address Form</h3>
+        <p>Complete address collection with validation</p>
+        <p-button
+          label="View Template"
+          icon="pi pi-arrow-right"
+          (onClick)="selectForm('address')"
+          [rounded]="true"
+          [text]="true"
+        ></p-button>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Form Views -->
+  <div *ngIf="selectedForm === 'contact'" class="form-view">
+    <p-button
+      label="← Back to Forms"
+      icon="pi pi-arrow-left"
+      (onClick)="back()"
+      [text]="true"
+      [rounded]="true"
+      severity="secondary"
+      styleClass="mb-4"
+    ></p-button>
+    <app-contact-form></app-contact-form>
+  </div>
+
+  <div *ngIf="selectedForm === 'registration'" class="form-view">
+    <p-button
+      label="← Back to Forms"
+      icon="pi pi-arrow-left"
+      (onClick)="back()"
+      [text]="true"
+      [rounded]="true"
+      severity="secondary"
+      styleClass="mb-4"
+    ></p-button>
+    <app-registration-form></app-registration-form>
+  </div>
+
+  <div *ngIf="selectedForm === 'survey'" class="form-view">
+    <p-button
+      label="← Back to Forms"
+      icon="pi pi-arrow-left"
+      (onClick)="back()"
+      [text]="true"
+      [rounded]="true"
+      severity="secondary"
+      styleClass="mb-4"
+    ></p-button>
+    <app-survey-form></app-survey-form>
+  </div>
+
+  <div *ngIf="selectedForm === 'address'" class="form-view">
+    <p-button
+      label="← Back to Forms"
+      icon="pi pi-arrow-left"
+      (onClick)="back()"
+      [text]="true"
+      [rounded]="true"
+      severity="secondary"
+      styleClass="mb-4"
+    ></p-button>
+    <app-address-form></app-address-form>
+  </div>
+</div>

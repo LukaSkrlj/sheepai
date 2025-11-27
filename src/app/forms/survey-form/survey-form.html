@@ -1,0 +1,49 @@
+<p-card header="Quick Survey" subheader="Gather feedback fast">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid form-grid">
+    <div class="p-field">
+      <label for="topic">Topic</label>
+      <p-select inputId="topic" [options]="topics" formControlName="topic" optionLabel="label" optionValue="value" placeholder="Select a topic"></p-select>
+      <small class="p-error" *ngIf="form.controls['topic'].touched && form.controls['topic'].invalid">Required.</small>
+    </div>
+
+    <div class="p-field">
+      <label>Satisfaction</label>
+      <p-rating formControlName="satisfaction"></p-rating>
+    </div>
+
+    <div class="p-field">
+      <label>Would recommend?</label>
+      <div class="radio-group">
+        <div class="radio-item">
+          <p-radioButton name="recommend" value="yes" formControlName="wouldRecommend" inputId="recYes"></p-radioButton>
+          <label for="recYes">Yes</label>
+        </div>
+        <div class="radio-item">
+          <p-radioButton name="recommend" value="no" formControlName="wouldRecommend" inputId="recNo"></p-radioButton>
+          <label for="recNo">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-field">
+      <label>Preferred channels</label>
+      <div class="checkbox-group">
+        <div class="checkbox-item" *ngFor="let c of channels">
+          <p-checkbox [binary]="true" [inputId]="'ch-' + c.value" (onChange)="toggleChannel(c.value, $event.checked)"></p-checkbox>
+          <label [for]="'ch-' + c.value">{{ c.label }}</label>
+        </div>
+      </div>
+      <small class="p-error" *ngIf="form.controls['channels'].touched && form.controls['channels'].invalid">Select at least one.</small>
+    </div>
+
+    <div class="p-field">
+      <label for="comments">Comments</label>
+      <textarea id="comments" pInputTextarea rows="4" formControlName="comments" placeholder="Optional"></textarea>
+    </div>
+
+    <div class="actions">
+      <p-button type="submit" label="Submit" icon="pi pi-check-circle"></p-button>
+    </div>
+  </form>
+</p-card>
+<p-toast></p-toast>

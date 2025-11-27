@@ -1,0 +1,25 @@
+.p-card {
+  margin-bottom: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem 1.25rem;
+}
+
+.p-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
