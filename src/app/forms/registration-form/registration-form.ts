@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractContro
 import { InputText } from 'primeng/inputtext';
 import { Password } from 'primeng/password';
 import { Checkbox } from 'primeng/checkbox';
-import {Button, ButtonDirective} from 'primeng/button';
+import { Button } from 'primeng/button';
 import { Card } from 'primeng/card';
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
