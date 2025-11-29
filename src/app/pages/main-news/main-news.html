@@ -24,7 +24,7 @@
                                 <div class="flex flex-col md:items-end gap-8">
                                     <p-knob [(ngModel)]="item.relevance" [step]=".1" [min]="0" [max]="10" [valueColor]="getSeverity(item.relevance)" valueTemplate="{value}" />
                                     <div class="flex flex-row-reverse md:flex-row gap-2">
-                                        <a (click)="$event.stopPropagation()" [href]="item.link" pButton class="text-center p-button-info p-button-rounded" target="_blank" rel="noopener noreferrer">
+                                        <a (click)="$event.stopPropagation()" [href]="item.link" pButton class="text-center p-button-rounded" target="_blank" rel="noopener noreferrer">
                                             <span pButtonLabel>See full article</span>
                                         </a>
                                     </div>
