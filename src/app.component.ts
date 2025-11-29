@@ -11,6 +11,6 @@ import {Data} from "@/services/data";
 export class AppComponent implements OnInit{
     #data = inject(Data)
     ngOnInit() {
-        this.#data.loadData<any>('example').subscribe(console.log)
+        this.#data.loadData('example').subscribe(console.log)
     }
 }
