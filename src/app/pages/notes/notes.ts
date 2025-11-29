@@ -119,6 +119,7 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
                     <app-note-card
                         [note]="item"
                         [currentUserId]="currentUser()?.id"
+                        (edit)="editNote($event)"
                         (delete)="deleteNote($event)" />
                 </div>
             </ng-template>
@@ -126,6 +127,7 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
 
         <app-note-form-dialog
             [(visible)]="noteDialogVisible"
+            [editingNote]="editingNote"
             (save)="saveNote($event)" />
     `
 })
@@ -140,6 +142,7 @@ export class Notes implements OnInit {
     searchTerm = signal('');
     filterType = signal<'all' | 'personal' | 'team'>('all');
     noteDialogVisible = false;
+    editingNote: Note | null = null;
 
     filterOptions = [
         { label: 'All Notes', value: 'all' },
@@ -206,6 +209,12 @@ export class Notes implements OnInit {
     }
 
     openNoteDialog(): void {
+        this.editingNote = null;
+        this.noteDialogVisible = true;
+    }
+
+    editNote(note: Note): void {
+        this.editingNote = note;
         this.noteDialogVisible = true;
     }
 
@@ -213,26 +222,51 @@ export class Notes implements OnInit {
         const user = this.currentUser();
         if (!user) return;
 
-        this.noteService.addNote({
-            userId: user.id,
-            teamId: formData.shareWithTeam ? user.teamId : null,
-            articleId: formData.articleId,
-            content: formData.content,
-            contentType: 'text',
-            metadata: {
-                articleTitle: formData.articleTitle || undefined,
-                tags: formData.tags.length > 0 ? formData.tags : undefined
-            }
-        });
+        if (formData.id) {
+            // Update existing note
+            this.noteService.updateNote(formData.id, {
+                content: formData.content,
+                articleId: formData.articleId,
+                teamId: formData.shareWithTeam ? user.teamId : null,
+                contentType: formData.contentType,
+                imageUrl: formData.imageUrl,
+                metadata: {
+                    articleTitle: formData.articleTitle || undefined,
+                    tags: formData.tags.length > 0 ? formData.tags : undefined
+                }
+            });
+
+            this.messageService.add({
+                severity: 'success',
+                summary: 'Success',
+                detail: 'Note updated successfully',
+                life: 3000
+            });
+        } else {
+            // Create new note
+            this.noteService.addNote({
+                userId: user.id,
+                teamId: formData.shareWithTeam ? user.teamId : null,
+                articleId: formData.articleId,
+                content: formData.content,
+                contentType: formData.contentType,
+                imageUrl: formData.imageUrl,
+                metadata: {
+                    articleTitle: formData.articleTitle || undefined,
+                    tags: formData.tags.length > 0 ? formData.tags : undefined
+                }
+            });
+
+            this.messageService.add({
+                severity: 'success',
+                summary: 'Success',
+                detail: 'Note created successfully',
+                life: 3000
+            });
+        }
 
         this.loadNotes();
-
-        this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Note created successfully',
-            life: 3000
-        });
+        this.editingNote = null;
     }
 
     deleteNote(noteId: string): void {

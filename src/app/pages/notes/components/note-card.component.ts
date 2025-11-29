@@ -19,7 +19,13 @@ import { UserService } from '@/services/user.service';
                         <p-tag *ngIf="!note.teamId" value="Personal" severity="success" />
                         <p-tag [value]="note.contentType" severity="secondary" />
                     </div>
-                    <div>
+                    <div class="flex gap-2">
+                        <p-button
+                            icon="pi pi-pencil"
+                            (onClick)="onEdit()"
+                            [text]="true"
+                            severity="secondary"
+                            [disabled]="!canDelete" />
                         <p-button
                             icon="pi pi-trash"
                             (onClick)="onDelete()"
@@ -64,6 +70,7 @@ export class NoteCardComponent {
     @Input() note!: Note;
     @Input() currentUserId?: string;
     @Output() delete = new EventEmitter<string>();
+    @Output() edit = new EventEmitter<Note>();
 
     userService = inject(UserService);
 
@@ -78,6 +85,10 @@ export class NoteCardComponent {
         const user = this.userService.getUserById(this.note.userId);
         return user?.name || 'Unknown';
     });
+
+    onEdit(): void {
+        this.edit.emit(this.note);
+    }
 
     onDelete(): void {
         this.delete.emit(this.note.id);
