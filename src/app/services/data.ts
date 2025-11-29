@@ -8,7 +8,7 @@ import {environment} from "../../environments/environment";
 })
 export class Data {
     #http = inject(HttpClient);
-    loadData<T>(data: string): Observable<T> {
-        return this.#http.get<T>(`${environment.url}/assets/${data}.json`);
+    loadData(data: string): Observable<any> {
+        return this.#http.get(`${environment.url}/assets/${data}.json`);
     }
 }
