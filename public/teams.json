@@ -1,0 +1,14 @@
+{
+  "teams": [
+    {
+      "id": "team-alpha",
+      "name": "Research Team Alpha",
+      "memberIds": ["user-1", "user-2"]
+    },
+    {
+      "id": "team-beta",
+      "name": "Development Team Beta",
+      "memberIds": ["user-3"]
+    }
+  ]
+}
