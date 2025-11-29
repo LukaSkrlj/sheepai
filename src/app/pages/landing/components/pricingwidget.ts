@@ -85,7 +85,7 @@ import { RippleModule } from 'primeng/ripple';
                             </li>
                             <li class="py-3 flex items-start">
                                 <i class="pi pi-check text-xl text-green-500 mr-3 mt-1"></i>
-                                <span class="text-lg">Advanced AI features</span>
+                                <span class="text-lg">Team collaboration tools</span>
                             </li>
                             <li class="py-3 flex items-start">
                                 <i class="pi pi-check text-xl text-green-500 mr-3 mt-1"></i>
