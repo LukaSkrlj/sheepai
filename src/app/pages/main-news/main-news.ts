@@ -9,11 +9,15 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { TagModule } from 'primeng/tag';
 import { Data } from '@/services/data';
 import { News } from '@/pages/service/news.service';
+import { Chip } from 'primeng/chip';
+import { Knob } from 'primeng/knob';
+import { Product } from '@/pages/service/product.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-main-news',
     standalone: true,
-    imports: [CommonModule, DataViewModule, FormsModule, SelectButtonModule, PickListModule, OrderListModule, TagModule, ButtonModule],
+    imports: [CommonModule, DataViewModule, FormsModule, SelectButtonModule, PickListModule, OrderListModule, TagModule, ButtonModule, Chip, Knob, RouterLink],
     templateUrl: './main-news.html',
     styleUrl: './main-news.scss'
 })
@@ -28,19 +32,16 @@ export class MainNews {
         this.dataService.loadData('main-news').subscribe((data) => (this.news = data));
     }
 
-    getSeverity(product: News) {
-        switch (product.inventoryStatus) {
-            case 'INSTOCK':
-                return 'success';
-
-            case 'LOWSTOCK':
-                return 'warn';
-
-            case 'OUTOFSTOCK':
-                return 'danger';
-
-            default:
-                return 'info';
+    getSeverity(relevance: number) {
+        if (relevance > 8.0) {
+            return 'Red';
         }
+        if (relevance > 6.3) {
+            return 'Orange';
+        }
+        if (relevance > 4.0) {
+            return 'Gold';
+        }
+        return 'MediumSpringGreen';
     }
 }
