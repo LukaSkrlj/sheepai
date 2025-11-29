@@ -1,22 +1,32 @@
-{
-  "users": [
+[
     {
-      "id": "user-1",
-      "name": "Alex Johnson",
-      "email": "alex@example.com",
-      "teamId": "team-alpha"
+        "id": 101,
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "teamId": 1
     },
     {
-      "id": "user-2",
-      "name": "Sam Williams",
-      "email": "sam@example.com",
-      "teamId": "team-alpha"
+        "id": 102,
+        "name": "Bob Smith",
+        "email": "bob@example.com",
+        "teamId": 1
     },
     {
-      "id": "user-3",
-      "name": "Jordan Lee",
-      "email": "jordan@example.com",
-      "teamId": null
+        "id": 103,
+        "name": "Chris Lee",
+        "email": "chris@example.com",
+        "teamId": 2
+    },
+    {
+        "id": 104,
+        "name": "Diana Perez",
+        "email": "diana@example.com",
+        "teamId": 3
+    },
+    {
+        "id": 105,
+        "name": "Evan Davis",
+        "email": "evan@example.com",
+        "teamId": 3
     }
-  ]
-}
+]

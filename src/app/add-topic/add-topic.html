@@ -1,0 +1,74 @@
+<div class="flex">
+    <div class="card flex flex-col gap-6 w-full">
+        <div class="font-semibold text-xl">Topic</div>
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <p-floatlabel variant="on">
+                    <label for="firstname2">Topic</label>
+                    <input pInputText id="firstname2" type="text" />
+                </p-floatlabel>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <app-country></app-country>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <p-floatlabel variant="on">
+                    <app-communication></app-communication>
+                </p-floatlabel>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <p-multiselect [options]="teams()" [(ngModel)]="selectedTeams" optionLabel="name" placeholder="Select Teams" class="w-full md:w-80"></p-multiselect>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <p-multiselect [options]="users()" [(ngModel)]="selectedUsers" optionLabel="name" placeholder="Select Users" class="w-full md:w-80"></p-multiselect>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <p-floatlabel variant="on">
+                    <label for="keyword">Keyword</label>
+                    <input [(ngModel)]="keyword" pInputText id="keyword" type="text" />
+                </p-floatlabel>
+                <p-button [rounded]="true" (click)="addKeyword()" label="Add" icon="pi pi-plus" />
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <p-floatlabel variant="on">
+                    <label for="web">Websites</label>
+                    <input [(ngModel)]="website" pInputText id="web" type="text" />
+                </p-floatlabel>
+                <p-button [rounded]="true" (click)="addWebsite()" label="Add" icon="pi pi-plus" />
+            </div>
+        </div>
+
+
+        @if (keywords.length || websites.length) {
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex flex-col gap-2 w-full">
+                    <h6>Keywords</h6>
+                    <div class="flex flex-col sm:flex-row">
+                        @for (k of keywords; track k) {
+                            <p-chip label="{{k}}" styleClass="m-1" [removable]="true" (onRemove)="removeKeyword(k)"></p-chip>
+                        }
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 w-full">
+                    <h6>Web pages</h6>
+                    <div class="flex flex-col sm:flex-row">
+                        @for (w of websites; track w) {
+                            <p-chip label="{{w}}" styleClass="m-1" [removable]="true" (onRemove)="removeWebsite(w)"></p-chip>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        <app-file-upload></app-file-upload>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<p-multiselect
+    [options]="communicationChannels"
+    [(ngModel)]="selectedChannels"
+    placeholder="Select Channels"
+    optionLabel="name"
+    class="w-full md:w-80"
+    display="chip"
+>
+    <ng-template let-channel #item>
+        <div class="flex items-center gap-2">
+            <i [class]="channel.icon" style="font-size: 1.1rem; min-width: 20px;"></i>
+            <div>{{ channel.name }}</div>
+        </div>
+    </ng-template>
+
+    <ng-template #dropdownicon>
+        <i class="pi pi-bell"></i> </ng-template>
+
+    <ng-template #filtericon>
+        <i class="pi pi-filter"></i>
+    </ng-template>
+
+    <ng-template #header>
+        <div class="font-medium px-3 py-2">Available Channels</div>
+    </ng-template>
+
+    <ng-template #footer>
+        <div class="p-3 flex justify-between">
+            <p-button label="Add Custom" severity="secondary" text size="small" icon="pi pi-plus" />
+            <p-button label="Clear Selection" severity="danger" text size="small" icon="pi pi-times" />
+        </div>
+    </ng-template>
+</p-multiselect>

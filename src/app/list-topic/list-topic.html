@@ -1,0 +1,51 @@
+<p-table #dt2 [value]="topics$ | async" dataKey="id" [rows]="10" [rowsPerPageOptions]="[10, 25, 50]" [loading]="false" [paginator]="true" [globalFilterFields]="['topic', 'country']" [tableStyle]="{ 'min-width': '75rem' }">
+    <ng-template #caption>
+        <div class="flex">
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                <input pInputText type="text" (input)="dt2.filterGlobal($event.target['value'], 'contains')" placeholder="Search Topics or Countries" />
+            </p-iconfield>
+        </div>
+    </ng-template>
+    <ng-template #header>
+        <tr>
+            <th style="width: 40%">Topic</th>
+            <th style="width: 25%">Country</th>
+            <th style="width: 15%">Teams</th>
+            <th style="width: 20%">Users</th>
+            <th style="width: 15%">Keywords</th>
+            <th style="width: 20%">Websites</th>
+        </tr>
+        <tr>
+            <th>
+                <p-columnFilter type="text" field="topic" placeholder="Search Topic" ariaLabel="Filter Topic" filterOn="input"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="country" placeholder="Search Country" ariaLabel="Filter Country"></p-columnFilter>
+            </th>
+            <th><p-columnFilter type="text" field="team" placeholder="Search Team" ariaLabel="Filter Country"></p-columnFilter></th>
+            <th><p-columnFilter type="text" field="user" placeholder="Search User" ariaLabel="Filter Country"></p-columnFilter></th>
+            <th><p-columnFilter type="text" field="keyword" placeholder="Search Keywords" ariaLabel="Filter Country"></p-columnFilter></th>
+            <th><p-columnFilter type="text" field="web" placeholder="Search Websites" ariaLabel="Filter Country"></p-columnFilter></th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-topic>
+        <tr>
+            <td>{{ topic.topic }}</td>
+            <td>
+                <span class="flex flex-row">{{ topic.country }} <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + 'de'" style="width: 20px" /></span>
+            </td>
+            <td>{{ topic.teams.join(', ') }}</td>
+            <td>{{ topic.users.join(', ') }}</td>
+            <td>{{ topic.keywords.join(', ') }} </td>
+            <td style="color: blue"><u>{{ topic.websites.join(', ') }}</u></td>
+        </tr>
+    </ng-template>
+    <ng-template #emptymessage>
+        <tr>
+            <td colspan="4">No projects found.</td>
+        </tr>
+    </ng-template>
+</p-table>

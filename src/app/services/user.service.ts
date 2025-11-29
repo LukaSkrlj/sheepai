@@ -9,33 +9,33 @@ import { Team } from '@/models/team.interface';
 export class UserService {
     #data = inject(Data);
 
-    users = signal<User[]>([]);
-    teams = signal<Team[]>([]);
+    users = signal<any[]>([]);
+    teams = signal<any[]>([]);
 
     // Hardcoded for hackathon demo
-    private readonly CURRENT_USER_ID = 'user-1';
+    private readonly CURRENT_USER_ID = 101;
 
     loadUsers(): void {
         this.#data.loadData('users').subscribe(data => {
-            this.users.set(data.users || []);
+            this.users.set(data || []);
         });
     }
 
     loadTeams(): void {
         this.#data.loadData('teams').subscribe(data => {
-            this.teams.set(data.teams || []);
+            this.teams.set(data || []);
         });
     }
 
-    getCurrentUser(): User | undefined {
+    getCurrentUser(): any {
         return this.users().find(u => u.id === this.CURRENT_USER_ID);
     }
 
-    getUserById(userId: string): User | undefined {
+    getUserById(userId: string): any {
         return this.users().find(u => u.id === userId);
     }
 
-    getTeamById(teamId: string): Team | undefined {
+    getTeamById(teamId: string): any {
         return this.teams().find(t => t.id === teamId);
     }
 }
