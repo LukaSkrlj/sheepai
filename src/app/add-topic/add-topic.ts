@@ -13,10 +13,11 @@ import {MultiSelect} from "primeng/multiselect";
 import {Data} from "@/services/data";
 import {toSignal} from "@angular/core/rxjs-interop";
 import {map} from "rxjs/operators";
+import {Communication} from "@/communication/communication";
 
 @Component({
     selector: 'app-add-topic',
-    imports: [InputText, MultiSelect, Textarea, FloatLabel, FileUpload, Chip, Country, Button, FormsModule, Checkbox],
+    imports: [InputText, MultiSelect, Textarea, FloatLabel, FileUpload, Chip, Country, Button, FormsModule, Checkbox, Communication],
     templateUrl: './add-topic.html',
     styleUrl: './add-topic.scss'
 })
@@ -27,11 +28,11 @@ export class AddTopic {
     websites = [];
     keyStrict = false;
     webStrict = false;
-    #data = inject(Data)
+    #data = inject(Data);
     teams = toSignal(this.#data.loadData('teams'));
     users = toSignal(this.#data.loadData('users'));
-    selectedTeams = []
-    selectedUsers = []
+    selectedTeams = [];
+    selectedUsers = [];
 
     addKeyword() {
         this.keywords.push(this.keyword);

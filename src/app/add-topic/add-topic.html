@@ -15,6 +15,14 @@
 
         <div class="flex flex-col md:flex-row gap-6">
             <div class="flex flex-wrap gap-2 w-full">
+                <p-floatlabel variant="on">
+                    <app-communication></app-communication>
+                </p-floatlabel>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
                 <p-multiselect [options]="teams()" [(ngModel)]="selectedTeams" optionLabel="name" placeholder="Select Teams" class="w-full md:w-80"></p-multiselect>
             </div>
             <div class="flex flex-wrap gap-2 w-full">
@@ -38,6 +46,7 @@
                 <p-button [rounded]="true" (click)="addWebsite()" label="Add" icon="pi pi-plus" />
             </div>
         </div>
+
 
         @if (keywords.length || websites.length) {
             <div class="flex flex-col md:flex-row gap-6">

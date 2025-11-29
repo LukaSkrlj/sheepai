@@ -25,8 +25,10 @@
             <th>
                 <p-columnFilter type="text" field="country" placeholder="Search Country" ariaLabel="Filter Country"></p-columnFilter>
             </th>
-            <th></th>
-            <th></th>
+            <th><p-columnFilter type="text" field="team" placeholder="Search Team" ariaLabel="Filter Country"></p-columnFilter></th>
+            <th><p-columnFilter type="text" field="user" placeholder="Search User" ariaLabel="Filter Country"></p-columnFilter></th>
+            <th><p-columnFilter type="text" field="keyword" placeholder="Search Keywords" ariaLabel="Filter Country"></p-columnFilter></th>
+            <th><p-columnFilter type="text" field="web" placeholder="Search Websites" ariaLabel="Filter Country"></p-columnFilter></th>
         </tr>
     </ng-template>
     <ng-template #body let-topic>
@@ -37,8 +39,8 @@
             </td>
             <td>{{ topic.teams.join(', ') }}</td>
             <td>{{ topic.users.join(', ') }}</td>
-            <td>{{ topic.keywords.join(', ') }}</td>
-            <td>{{ topic.websites.join(', ') }}</td>
+            <td>{{ topic.keywords.join(', ') }} </td>
+            <td style="color: blue"><u>{{ topic.websites.join(', ') }}</u></td>
         </tr>
     </ng-template>
     <ng-template #emptymessage>
