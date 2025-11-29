@@ -20,20 +20,12 @@ import { UserService } from '@/services/user.service';
                         <p-tag [value]="note.contentType" severity="secondary" />
                     </div>
                     <div>
-                        <p-button
-                            icon="pi pi-trash"
-                            (onClick)="onDelete()"
-                            [text]="true"
-                            severity="danger"
-                            [disabled]="!canDelete" />
+                        <p-button icon="pi pi-trash" (onClick)="onDelete()" [text]="true" severity="danger" [disabled]="!canDelete" />
                     </div>
                 </div>
             </ng-template>
 
-            <img *ngIf="note.contentType === 'image' && note.imageUrl"
-                 [src]="note.imageUrl"
-                 [alt]="note.content"
-                 class="w-full mb-4 rounded-lg" />
+            <img *ngIf="note.contentType === 'image' && note.imageUrl" [src]="note.imageUrl" [alt]="note.content" class="w-full mb-4 rounded-lg" />
 
             <p class="mb-4 text-gray-700">{{ note.content }}</p>
 
@@ -44,17 +36,14 @@ import { UserService } from '@/services/user.service';
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="pi pi-calendar"></i>
-                    <span>{{ note.timestamp | date:'short' }}</span>
+                    <span>{{ note.timestamp | date: 'short' }}</span>
                 </div>
                 <div *ngIf="note.teamId && creatorName()" class="flex items-center gap-2">
                     <i class="pi pi-user"></i>
                     <span>By {{ creatorName() }}</span>
                 </div>
                 <div *ngIf="note.metadata?.tags?.length" class="flex items-center gap-2 flex-wrap mt-2">
-                    <p-tag *ngFor="let tag of note.metadata.tags"
-                           [value]="tag"
-                           severity="secondary"
-                           styleClass="text-xs" />
+                    <p-tag *ngFor="let tag of note.metadata.tags" [value]="tag" severity="secondary" styleClass="text-xs" />
                 </div>
             </div>
         </p-card>
@@ -76,7 +65,7 @@ export class NoteCardComponent {
             return '';
         }
         const user = this.userService.getUserById(this.note.userId);
-        return user?.name || 'Unknown';
+        return user?.name || 'Alice Johnson';
     });
 
     onDelete(): void {

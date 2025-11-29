@@ -19,7 +19,7 @@ import { map } from 'rxjs/operators';
     providers: [MessageService],
     template: `
         @let a = article | async;
-        <p-toast />
+        <p-toast xmlns="http://www.w3.org/1999/html" />
 
         <div class="max-w-4xl mx-auto">
             <article class="prose prose-lg" appNoteable (noteCreated)="onNoteCreated($event, article)">
@@ -37,23 +37,24 @@ import { map } from 'rxjs/operators';
                 <div class="text-lg leading-relaxed space-y-4">
                     <p class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500"><strong>Pro Tip:</strong> Select any text in this article to create a note, or hover over the image above!</p>
 
+                    <h3>What Happened</h3>
+
                     <p>
-                        This is a demo of the note-taking functionality. The platform is designed to help teams collaborate on content research and share important insights. All notes are automatically saved and can be accessed from the Notes page.
+                        Google Chrome received a security update on Nov 18, 2025, to patch two serious vulnerabilities in its JavaScript / WebAssembly engine (V8 JavaScript engine). The most critical flaw is recorded as CVE-2025-13223 — a type
+                        confusion bug that could lead to heap corruption, giving a remote attacker the possibility of arbitrary code execution or causing crashes. Google acknowledges that an exploit for CVE-2025-13223 “exists in the wild” — meaning
+                        attackers were using it before the patch was made public.
                     </p>
-
-                    <p>Team members can see each other's notes when they're marked as "Team" notes, making it easy to collaborate and avoid duplicate research. Personal notes remain private to the individual user.</p>
-
-                    <h2 class="text-2xl font-bold mt-8 mb-4">Key Features</h2>
-
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Capture text snippets with a simple selection</li>
-                        <li>Save images for visual reference</li>
-                        <li>Organize notes with tags and metadata</li>
-                        <li>Share knowledge within your team</li>
-                        <li>Search and filter your notes easily</li>
-                    </ul>
-
-                    <p class="mt-6">Try it now! Select any text or hover over the image to see the "Add to Notes" button appear. Your notes will be saved and you can view them by clicking the "View My Notes" button above.</p>
+                    <h3>What’s Fixed</h3>
+                    <p>
+                        Chrome versions before 142.0.7444.175 (on Windows/Linux) or 142.0.7444.176 (on macOS) are vulnerable — users must update to those versions or newer. Besides CVE-2025-13223, the update also patches another similar bug:
+                        CVE-2025-13224 (also type confusion). This release is part of a broader patch addressing seven zero-day vulnerabilities in Chrome (some exploited, some proof-of-concept) discovered since the start of 2025.
+                    </p>
+                    <h3>What You Should Do Right Now</h3>
+                    <p>
+                        Update Chrome immediately (or any Chromium-based browser fork you’re using, once patches roll out). Treat untrusted or unknown websites with caution — especially those using WebAssembly or JavaScript in complex ways. If you’re
+                        an IT admin or manage multiple devices, ensure all installations are updated to avoid mass exploitation. If you like — I can also check if there are any known real-world attacks exploiting these vulnerabilities (recent logs /
+                        samples), to see how dangerous this really is right now. More about this patch
+                    </p>
                 </div>
             </article>
         </div>
