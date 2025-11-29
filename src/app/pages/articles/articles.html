@@ -1,21 +1,21 @@
 <div class="flex flex-col">
     <div class="card">
-        <p-dataview [value]="news" layout="list">
+        <p-dataview [value]="articleService.allArticles()" layout="list">
             <ng-template #list let-items>
                 <div class="flex flex-col">
-                    <div *ngFor="let item of items; let i = index" [routerLink]="'/'">
+                    <div *ngFor="let item of items; let i = index" [routerLink]="['/article', item.id]">
                         <div class="item-hover flex flex-col sm:flex-row sm:items-center p-6 gap-4
                              hover:bg-surface-100 dark:hover:bg-surface-800
                              hover:shadow-md rounded transition cursor-pointer"
                              [ngClass]="{ 'border-t border-surface': i !== 0 }">
                             <div class="md:w-40 relative">
-                                <img class="block xl:block mx-auto rounded w-full" [src]="item.image" [alt]="item.name" />
+                                <img class="block xl:block mx-auto rounded w-full" [src]="item.image" [alt]="item.title" />
                             </div>
                             <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
                                 <div class="flex flex-row md:flex-col justify-between items-start gap-2">
                                     <div>
-                                        <div class="text-lg font-medium mt-2">{{ item.name }}</div>
-                                        <div class="my-2">{{ item.description }}</div>
+                                        <div class="text-lg font-medium mt-2">{{ item.title }}</div>
+                                        <div class="my-2">{{ item.content }}</div>
                                         <div>
                                             <p-chip class="transition" *ngFor="let category of item.categories" [label]="category" styleClass="m-1"></p-chip>
                                         </div>

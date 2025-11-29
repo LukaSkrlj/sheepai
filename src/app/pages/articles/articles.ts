@@ -7,29 +7,25 @@ import { OrderListModule } from 'primeng/orderlist';
 import { PickListModule } from 'primeng/picklist';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TagModule } from 'primeng/tag';
-import { Data } from '@/services/data';
-import { News } from '@/pages/service/news.service';
 import { Chip } from 'primeng/chip';
 import { Knob } from 'primeng/knob';
-import { Product } from '@/pages/service/product.service';
 import { RouterLink } from '@angular/router';
+import { ArticleService } from '@/services/article.service';
 
 @Component({
-    selector: 'app-main-news',
+    selector: 'app-articles',
     standalone: true,
     imports: [CommonModule, DataViewModule, FormsModule, SelectButtonModule, PickListModule, OrderListModule, TagModule, ButtonModule, Chip, Knob, RouterLink],
-    templateUrl: './main-news.html',
-    styleUrl: './main-news.scss'
+    templateUrl: './articles.html',
+    styleUrl: './articles.scss'
 })
-export class MainNews {
-    news: News[] = [];
-
-    private dataService = inject(Data);
+export class Articles {
+    articleService = inject(ArticleService);
 
     constructor() {}
 
     ngOnInit() {
-        this.dataService.loadData('main-news').subscribe((data) => (this.news = data));
+        this.articleService.loadArticles();
     }
 
     getSeverity(relevance: number) {
