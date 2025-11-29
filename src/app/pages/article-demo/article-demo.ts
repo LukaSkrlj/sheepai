@@ -27,6 +27,10 @@ import { map } from 'rxjs/operators';
                 <p class="text-sm text-gray-500 mb-6">By {{ a.author }} | {{ a.publishedDate }}</p>
 
                 <div class="mb-8">
+                    <!--<video #video [poster]="a.thumbnail" playsinline muted loop controls (mouseenter)="playVideo($event)" (mouseleave)="pauseVideo($event)" class="w-full rounded-lg shadow-lg" style="max-width: 600px; height: auto;">
+                        <source [src]="a.reelUrl" type="video/mp4" />
+                        Your browser does not support HTML5 video.
+                    </video>-->
                     <img [src]="a.image" [alt]="a.title" class="w-full rounded-lg shadow-lg" style="max-width: 600px; height: auto;" />
                 </div>
 
@@ -84,6 +88,22 @@ export class ArticleDemo implements OnInit {
         publishedDate: '2025-11-15',
         imageUrl: 'https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg'
     };*/
+
+    // @ViewChild('video') video: any;
+
+    playVideo(event: Event) {
+        const video = event.target as HTMLVideoElement;
+        video.muted = true; // REQUIRED for hover play
+        video.playsInline = true;
+        video.play().catch((err) => {
+            console.warn('Hover play blocked:', err);
+        });
+    }
+
+    pauseVideo(event: Event) {
+        const video = event.target as HTMLVideoElement;
+        video.pause();
+    }
 
     ngOnInit(): void {
         this.userService.loadUsers();

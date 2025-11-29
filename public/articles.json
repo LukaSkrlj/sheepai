@@ -9,7 +9,9 @@
             "relevance": 8.1,
             "link": "https://thehackernews.com/2025/11/researchers-find-serious-ai-bugs.html",
             "author": "Sarah J. Morris",
-            "publishedDate": "2025-11-29"
+            "publishedDate": "2025-11-29",
+            "reelUrl":"http://localhost:4200/video/reel1.mp4",
+            "thumbnail":"http://localhost:4200/img/reel1.png"
         },
         {
             "id": "1002",
@@ -20,7 +22,9 @@
             "relevance": 7.8,
             "link": "https://thehackernews.com/2025/11/chinese-hackers-use-anthropics-ai-to.html",
             "author": "Sarah J. Morris",
-            "publishedDate":  "2025-11-29"
+            "publishedDate":  "2025-11-29",
+            "reelUrl": "http://localhost:4200/video/reel1.mp4",
+            "thumbnail": "http://localhost:4200/img/reel1.png"
         },
         {
             "id": "1003",
@@ -31,7 +35,9 @@
             "relevance": 7.5,
             "link": "https://thehackernews.com/2025/11/google-issues-security-fix-for-actively.html",
             "author": "Sarah J. Morris",
-            "publishedDate":  "2025-11-29"
+            "publishedDate":  "2025-11-29",
+            "reelUrl": "http://localhost:4200/video/reel1.mp4",
+            "thumbnail": "http://localhost:4200/img/reel1.png"
         },
         {
             "id": "1004",
@@ -42,7 +48,9 @@
             "relevance": 5.9,
             "link": "https://thehackernews.com/2025/11/north-korean-hackers-deploy-197-npm.html",
             "author": "Sarah J. Morris",
-            "publishedDate":  "2025-11-29"
+            "publishedDate":  "2025-11-29",
+            "reelUrl": "http://localhost:4200/video/reel1.mp4",
+            "thumbnail": "http://localhost:4200/img/reel1.png"
         },
         {
             "id": "1005",
@@ -53,7 +61,9 @@
             "relevance": 9.1,
             "link": "https://thehackernews.com/2025/09/russian-hackers-gamaredon-and-turla.html",
             "author": "Sarah J. Morris",
-            "publishedDate":  "2025-11-29"
+            "publishedDate":  "2025-11-29",
+            "reelUrl": "http://localhost:4200/video/reel1.mp4",
+            "thumbnail": "http://localhost:4200/img/reel1.png"
         },
         {
             "id": "1006",
@@ -64,7 +74,9 @@
             "relevance": 3.6,
             "link": "https://thehackernews.com/2025/11/meta-expands-whatsapp-security-research.html",
             "author": "Sarah J. Morris",
-            "publishedDate":  "2025-11-29"
+            "publishedDate":  "2025-11-29",
+            "reelUrl": "http://localhost:4200/video/reel1.mp4",
+            "thumbnail": "http://localhost:4200/img/reel1.png"
         }
     ]
 }

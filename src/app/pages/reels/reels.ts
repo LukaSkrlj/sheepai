@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 class Video {
@@ -23,8 +23,6 @@ export class Reels {
         { item: 'reel1', isPlaying: false },
         { item: 'reel2', isPlaying: false }
     ];
-
-    @ViewChildren('video') videos!: QueryList<ElementRef<HTMLVideoElement>>;
 
     playVideo(event: Event) {
         const video = event.target as HTMLVideoElement;
