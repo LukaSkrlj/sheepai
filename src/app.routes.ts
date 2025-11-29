@@ -9,6 +9,7 @@ import { AddTopic } from '@/add-topic/add-topic';
 import {ListTopic} from "@/list-topic/list-topic";
 import { Articles } from './app/pages/articles/articles';
 import { ArticleDemo } from './app/pages/article-demo/article-demo';
+import {Notes} from "@/pages/notes/notes";
 
 export const appRoutes: Routes = [
     {
@@ -22,6 +23,7 @@ export const appRoutes: Routes = [
             { path: 'all-topics', component: ListTopic },
             { path: 'articles', component: Articles },
             { path: 'article/:id', component: ArticleDemo },
+            { path: 'notes', component: Notes },
         ]
     },
     { path: 'landing', component: Landing },

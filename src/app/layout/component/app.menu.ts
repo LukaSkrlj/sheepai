@@ -66,7 +66,7 @@ export class AppMenu {
                     {
                         label: 'Notes',
                         icon: 'pi pi-fw pi-bookmark',
-                        routerLink: ['/pages/notes']
+                        routerLink: ['/notes']
                     },
                 ]
             },
