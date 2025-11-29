@@ -1,14 +1,15 @@
-{
-  "teams": [
+[
     {
       "id": "team-alpha",
       "name": "Research Team Alpha",
-      "memberIds": ["user-1", "user-2"]
+      "memberIds": ["user-1", "user-2"],
+        "description": "UI/UX design team"
     },
     {
       "id": "team-beta",
       "name": "Development Team Beta",
-      "memberIds": ["user-3"]
+      "memberIds": ["user-3"],
+        "description": "Content, social media, and outreach"
     }
-  ]
-}
+]
+

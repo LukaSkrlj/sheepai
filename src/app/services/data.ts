@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {catchError, Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -9,6 +9,6 @@ import {environment} from "../../environments/environment";
 export class Data {
     #http = inject(HttpClient);
     loadData(data: string): Observable<any> {
-        return this.#http.get<any>(`${environment.url}/${data}.json`);
+        return this.#http.get(`${environment.url}/${data}.json`);
     }
 }

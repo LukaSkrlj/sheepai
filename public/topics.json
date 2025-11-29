@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "topic": "Cyber Threat Intelligence",
+        "country": "United States",
+        "teams": [
+           "Cybersecurity",
+           "Engineering"
+        ],
+        "users": [
+            "Nina Patel",
+            "Marcus Reed"
+        ],
+        "keywords": [
+            "ransomware",
+            "zero-day",
+            "phishing detection",
+            "APT group"
+        ],
+        "websites": [
+            "https://krebsonsecurity.com",
+            "https://www.bleepingcomputer.com",
+            "https://thehackernews.com"
+        ],
+        "files": [
+            {
+                "fileName": "intel-report.pdf",
+                "fileSize": "1.2MB",
+                "uploadedAt": "2025-01-04T10:12:44Z"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "topic": "Brand Reputation Monitoring",
+        "country": "Germany",
+        "teams": [
+            "Marketing"
+        ],
+        "users": [
+            "Evan Davis"
+        ],
+        "keywords": [
+            "brand mentions",
+            "customer reviews",
+            "negative sentiment"
+        ],
+        "websites": [
+            "https://trustpilot.com",
+            "https://reddit.com",
+            "https://twitter.com"
+        ],
+        "files": []
+    }
+]
