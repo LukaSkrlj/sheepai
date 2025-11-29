@@ -1,0 +1,140 @@
+{
+  "notes": [
+    {
+      "id": "note-001",
+      "userId": "user-1",
+      "teamId": "team-alpha",
+      "articleId": "article-001",
+      "content": "Key insight: Users encounter over 100,000 words daily. We need automated filtering!",
+      "contentType": "text",
+      "timestamp": "2025-11-29T10:30:00Z",
+      "metadata": {
+        "articleTitle": "Managing Information Overload in 2025",
+        "articleUrl": "/article-demo",
+        "tags": ["productivity", "research"]
+      }
+    },
+    {
+      "id": "note-002",
+      "userId": "user-2",
+      "teamId": "team-alpha",
+      "articleId": "article-001",
+      "content": "Setting boundaries with technology - important for work-life balance",
+      "contentType": "text",
+      "timestamp": "2025-11-29T11:15:00Z",
+      "metadata": {
+        "articleTitle": "Managing Information Overload in 2025",
+        "articleUrl": "/article-demo",
+        "tags": ["wellness", "productivity"]
+      }
+    },
+    {
+      "id": "note-003",
+      "userId": "user-1",
+      "teamId": null,
+      "articleId": "article-001",
+      "content": "Personal reminder: Review automated filter tools this week",
+      "contentType": "text",
+      "timestamp": "2025-11-29T12:00:00Z",
+      "metadata": {
+        "articleTitle": "Managing Information Overload in 2025",
+        "articleUrl": "/article-demo",
+        "tags": ["personal", "todo"]
+      }
+    },
+    {
+      "id": "note-004",
+      "userId": "user-1",
+      "teamId": "team-alpha",
+      "articleId": "article-001",
+      "content": "Useful infographic showing daily information consumption",
+      "contentType": "image",
+      "imageUrl": "https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg",
+      "timestamp": "2025-11-29T13:20:00Z",
+      "metadata": {
+        "articleTitle": "Managing Information Overload in 2025",
+        "articleUrl": "/article-demo",
+        "tags": ["infographic", "data"]
+      }
+    },
+    {
+      "id": "note-005",
+      "userId": "user-2",
+      "teamId": "team-alpha",
+      "articleId": "article-002",
+      "content": "Key principles: clarity, accuracy, and context in visualizations",
+      "contentType": "text",
+      "timestamp": "2025-11-29T14:45:00Z",
+      "metadata": {
+        "articleTitle": "Data Visualization Best Practices",
+        "tags": ["design", "visualization"]
+      }
+    },
+    {
+      "id": "note-006",
+      "userId": "user-1",
+      "teamId": "team-alpha",
+      "articleId": "article-002",
+      "content": "Charts should tell a story and guide viewers to insights",
+      "contentType": "text",
+      "timestamp": "2025-11-29T15:10:00Z",
+      "metadata": {
+        "articleTitle": "Data Visualization Best Practices",
+        "tags": ["storytelling", "data"]
+      }
+    },
+    {
+      "id": "note-007",
+      "userId": "user-1",
+      "teamId": null,
+      "articleId": "article-002",
+      "content": "Check out Color Brewer for consistent color schemes",
+      "contentType": "text",
+      "timestamp": "2025-11-29T16:00:00Z",
+      "metadata": {
+        "articleTitle": "Data Visualization Best Practices",
+        "tags": ["personal", "tools"]
+      }
+    },
+    {
+      "id": "note-008",
+      "userId": "user-2",
+      "teamId": "team-alpha",
+      "articleId": "article-002",
+      "content": "Example chart showing proper use of color",
+      "contentType": "image",
+      "imageUrl": "https://primefaces.org/cdn/primeng/images/demo/product/game-controller.jpg",
+      "timestamp": "2025-11-29T16:30:00Z",
+      "metadata": {
+        "articleTitle": "Data Visualization Best Practices",
+        "tags": ["example", "design"]
+      }
+    },
+    {
+      "id": "note-009",
+      "userId": "user-3",
+      "teamId": null,
+      "articleId": "article-001",
+      "content": "Mindful consumption is key to avoiding burnout",
+      "contentType": "text",
+      "timestamp": "2025-11-29T17:00:00Z",
+      "metadata": {
+        "articleTitle": "Managing Information Overload in 2025",
+        "tags": ["wellness", "mental-health"]
+      }
+    },
+    {
+      "id": "note-010",
+      "userId": "user-1",
+      "teamId": "team-alpha",
+      "articleId": "article-001",
+      "content": "Practical strategies for the workplace - share with team!",
+      "contentType": "text",
+      "timestamp": "2025-11-29T17:45:00Z",
+      "metadata": {
+        "articleTitle": "Managing Information Overload in 2025",
+        "tags": ["teamwork", "strategy"]
+      }
+    }
+  ]
+}

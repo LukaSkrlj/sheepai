@@ -5,6 +5,7 @@ import { Documentation } from './app/pages/documentation/documentation';
 import { Landing } from './app/pages/landing/landing';
 import { Notfound } from './app/pages/notfound/notfound';
 import { MainNews } from '@/pages/main-news/main-news';
+import { ArticleDemo } from './app/pages/article-demo/article-demo';
 
 export const appRoutes: Routes = [
     {
@@ -13,6 +14,7 @@ export const appRoutes: Routes = [
         children: [
             { path: '', component: Dashboard },
             { path: 'main-news', component: MainNews },
+            { path: 'article-demo', component: ArticleDemo },
             { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
             { path: 'documentation', component: Documentation },
             { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') }

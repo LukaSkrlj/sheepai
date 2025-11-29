@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "id": "article-001",
+      "title": "Managing Information Overload in 2025",
+      "content": "In today's digital age, we are constantly bombarded with information from various sources. Learning to filter and prioritize is essential for maintaining productivity and mental health. This article explores practical strategies for managing information overload in the modern workplace. Key strategies include setting boundaries with technology, using automated filters to reduce noise, and practicing mindful consumption of content. Research shows that the average person encounters over 100,000 words daily across various media channels.",
+      "author": "Dr. Sarah Chen",
+      "publishedDate": "2025-11-15",
+      "imageUrl": "https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg"
+    },
+    {
+      "id": "article-002",
+      "title": "Data Visualization Best Practices",
+      "content": "Effective data visualization helps users understand complex information quickly. Key principles include clarity, accuracy, and context. Charts should tell a story and guide the viewer to actionable insights. When designing visualizations, consider your audience's familiarity with data, use appropriate chart types for your data, and maintain consistent color schemes. The goal is to make complex data accessible and understandable at a glance.",
+      "author": "Michael Rodriguez",
+      "publishedDate": "2025-11-20",
+      "imageUrl": "https://primefaces.org/cdn/primeng/images/demo/product/game-controller.jpg"
+    }
+  ]
+}
