@@ -1,0 +1,32 @@
+[
+    {
+        "id": 101,
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "teamId": 1
+    },
+    {
+        "id": 102,
+        "name": "Bob Smith",
+        "email": "bob@example.com",
+        "teamId": 1
+    },
+    {
+        "id": 103,
+        "name": "Chris Lee",
+        "email": "chris@example.com",
+        "teamId": 2
+    },
+    {
+        "id": 104,
+        "name": "Diana Perez",
+        "email": "diana@example.com",
+        "teamId": 3
+    },
+    {
+        "id": 105,
+        "name": "Evan Davis",
+        "email": "evan@example.com",
+        "teamId": 3
+    }
+]

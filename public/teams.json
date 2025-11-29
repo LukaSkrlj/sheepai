@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "ICT",
+        "description": "Backend and frontend development team"
+    },
+    {
+        "id": 2,
+        "name": "Cloud",
+        "description": "UI/UX design team"
+    },
+    {
+        "id": 3,
+        "name": "CyberSecurity",
+        "description": "Content, social media, and outreach"
+    }
+]

@@ -6,6 +6,7 @@ import { Notfound } from './app/pages/notfound/notfound';
 import { TeamSettings } from '@/team-settings/team-settings';
 import { UserSettings } from '@/user-settings/user-settings';
 import { AddTopic } from '@/add-topic/add-topic';
+import {ListTopic} from "@/list-topic/list-topic";
 
 export const appRoutes: Routes = [
     {
@@ -15,7 +16,8 @@ export const appRoutes: Routes = [
             { path: '', component: Dashboard },
             { path: 'team-settings', component: TeamSettings },
             { path: 'user-settings', component: UserSettings },
-            { path: 'add-topic', component: AddTopic }
+            { path: 'add-topic', component: AddTopic },
+            { path: 'all-topics', component: ListTopic },
         ]
     },
     { path: 'landing', component: Landing },
