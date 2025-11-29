@@ -1,13 +1,13 @@
 [
     {
       "id": "team-alpha",
-      "name": "Research Team Alpha",
+      "name": "Engineering",
       "memberIds": ["user-1", "user-2"],
         "description": "UI/UX design team"
     },
     {
       "id": "team-beta",
-      "name": "Development Team Beta",
+      "name": "CyberSecurity",
       "memberIds": ["user-3"],
         "description": "Content, social media, and outreach"
     }

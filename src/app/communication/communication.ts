@@ -19,5 +19,5 @@ export class Communication {
     ];
 
     // Model to hold the selected values (initialize as an empty array)
-    selectedChannels: any[] = [];
+    selectedChannels: any[] = [{ name: 'Teams', icon: 'pi pi-microsoft' },{ name: 'Telephone', icon: 'pi pi-phone' }];
 }

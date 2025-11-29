@@ -35,7 +35,7 @@
         <tr>
             <td>{{ topic.topic }}</td>
             <td>
-                <span class="flex flex-row">{{ topic.country }} <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + 'de'" style="width: 20px" /></span>
+                <span class="flex flex-row">{{ topic.country }} <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + topic.country == 'Germany' ? 'DE' : 'US'" style="width: 20px" /></span>
             </td>
             <td>{{ topic.teams.join(', ') }}</td>
             <td>{{ topic.users.join(', ') }}</td>

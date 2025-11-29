@@ -12,7 +12,7 @@ import { ButtonModule } from 'primeng/button';
 export class Country {
     countries!: any[];
 
-    selectedCountries!: any[];
+    selectedCountries: any[] = [{ name: 'United States', code: 'US' }];
 
     constructor() {
         this.countries = [
