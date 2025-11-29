@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {Data} from "@/services/data";
 
 @Component({
     selector: 'app-root',
@@ -7,4 +8,9 @@ import { RouterModule } from '@angular/router';
     imports: [RouterModule],
     template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {}
+export class AppComponent implements OnInit{
+    #data = inject(Data)
+    ngOnInit() {
+        this.#data.loadData('example').subscribe(console.log)
+    }
+}
