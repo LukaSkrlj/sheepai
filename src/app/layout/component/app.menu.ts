@@ -24,7 +24,8 @@ export class AppMenu {
                 label: 'Home',
                 items: [
                     { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-                    { label: 'Articles', icon: 'pi pi-fw pi-file', routerLink: ['/articles'] }
+                    { label: 'Articles', icon: 'pi pi-fw pi-file', routerLink: ['/articles'] },
+                    { label: 'Reels', icon: 'pi pi-fw pi-play-circle', routerLink: ['/reels'] }
                 ]
             },
             {
@@ -67,7 +68,7 @@ export class AppMenu {
                         label: 'Notes',
                         icon: 'pi pi-fw pi-bookmark',
                         routerLink: ['/notes']
-                    },
+                    }
                 ]
             },
             {

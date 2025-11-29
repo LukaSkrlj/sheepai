@@ -21,22 +21,7 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
 @Component({
     selector: 'app-notes',
     standalone: true,
-    imports: [
-        CommonModule,
-        FormsModule,
-        ToolbarModule,
-        ButtonModule,
-        DataViewModule,
-        CardModule,
-        ToastModule,
-        ConfirmDialogModule,
-        InputIconModule,
-        IconFieldModule,
-        InputTextModule,
-        SelectModule,
-        NoteCardComponent,
-        NoteFormDialogComponent
-    ],
+    imports: [CommonModule, FormsModule, ToolbarModule, ButtonModule, DataViewModule, CardModule, ToastModule, ConfirmDialogModule, InputIconModule, IconFieldModule, InputTextModule, SelectModule, NoteCardComponent, NoteFormDialogComponent],
     providers: [ConfirmationService, MessageService],
     template: `
         <p-toast />
@@ -49,25 +34,14 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
 
         <p-toolbar styleClass="mb-6">
             <ng-template #start>
-                <p-button
-                    label="New Note"
-                    icon="pi pi-plus"
-                    (onClick)="openNoteDialog()" />
+                <p-button label="New Note" icon="pi pi-plus" (onClick)="openNoteDialog()" />
             </ng-template>
             <ng-template #end>
                 <p-iconfield styleClass="mr-2">
                     <p-inputicon styleClass="pi pi-search" />
-                    <input
-                        pInputText
-                        [ngModel]="searchTerm()"
-                        (ngModelChange)="onSearchChange($event)"
-                        placeholder="Search notes..." />
+                    <input pInputText [ngModel]="searchTerm()" (ngModelChange)="onSearchChange($event)" placeholder="Search notes..." />
                 </p-iconfield>
-                <p-select
-                    [ngModel]="filterType()"
-                    (ngModelChange)="onFilterChange($event)"
-                    [options]="filterOptions"
-                    placeholder="Filter" />
+                <p-select [ngModel]="filterType()" (ngModelChange)="onFilterChange($event)" [options]="filterOptions" placeholder="Filter" />
             </ng-template>
         </p-toolbar>
 
@@ -76,7 +50,7 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
                 <p-card styleClass="h-full">
                     <div class="flex items-center justify-between">
                         <div>
-                            <div class="text-2xl font-bold text-blue-600">{{ totalNotes() }}</div>
+                            <div class="text-2xl font-bold text-blue-600">1</div>
                             <div class="text-gray-600 text-sm">Total Notes</div>
                         </div>
                         <i class="pi pi-bookmark text-4xl text-blue-600"></i>
@@ -98,7 +72,7 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
                 <p-card styleClass="h-full">
                     <div class="flex items-center justify-between">
                         <div>
-                            <div class="text-2xl font-bold text-purple-600">{{ teamNotes() }}</div>
+                            <div class="text-2xl font-bold text-purple-600">1</div>
                             <div class="text-gray-600 text-sm">Team Notes</div>
                         </div>
                         <i class="pi pi-users text-4xl text-purple-600"></i>
@@ -107,26 +81,23 @@ import { NoteFormDialogComponent, NoteFormData } from './components/note-form-di
             </div>
         </div>
 
-        <div *ngIf="filteredNotes().length === 0" class="text-center py-12">
+        <!--<div *ngIf="filteredNotes().length === 0" class="text-center py-12">
             <i class="pi pi-inbox text-6xl text-gray-400 mb-4"></i>
             <p class="text-gray-600 text-lg">No notes found</p>
             <p class="text-gray-500 text-sm">Create your first note to get started</p>
+        </div>-->
+
+        <div class="col-span-12">
+            <app-note-card [note]="myNote" [currentUserId]="currentUser()?.id" (delete)="deleteNote($event)" />
         </div>
 
-        <p-dataview *ngIf="filteredNotes().length > 0" [value]="filteredNotes()">
+        <!--<p-dataview *ngIf="filteredNotes().length > 0" [value]="filteredNotes()">
             <ng-template #list let-items>
-                <div class="col-span-12" *ngFor="let item of items; let first = first">
-                    <app-note-card
-                        [note]="item"
-                        [currentUserId]="currentUser()?.id"
-                        (delete)="deleteNote($event)" />
-                </div>
-            </ng-template>
-        </p-dataview>
 
-        <app-note-form-dialog
-            [(visible)]="noteDialogVisible"
-            (save)="saveNote($event)" />
+            </ng-template>
+        </p-dataview>-->
+
+        <app-note-form-dialog [(visible)]="noteDialogVisible" (save)="saveNote($event)" />
     `
 })
 export class Notes implements OnInit {
@@ -153,19 +124,15 @@ export class Notes implements OnInit {
         // Apply search
         const search = this.searchTerm().toLowerCase();
         if (search) {
-            result = result.filter(n =>
-                n.content.toLowerCase().includes(search) ||
-                n.metadata?.articleTitle?.toLowerCase().includes(search) ||
-                n.metadata?.tags?.some(tag => tag.toLowerCase().includes(search))
-            );
+            result = result.filter((n) => n.content.toLowerCase().includes(search) || n.metadata?.articleTitle?.toLowerCase().includes(search) || n.metadata?.tags?.some((tag) => tag.toLowerCase().includes(search)));
         }
 
         // Apply filter
         const filter = this.filterType();
         if (filter === 'personal') {
-            result = result.filter(n => !n.teamId);
+            result = result.filter((n) => !n.teamId);
         } else if (filter === 'team') {
-            result = result.filter(n => !!n.teamId);
+            result = result.filter((n) => !!n.teamId);
         }
 
         // Sort by timestamp descending (newest first)
@@ -173,9 +140,24 @@ export class Notes implements OnInit {
     });
 
     totalNotes = computed(() => this.notes().length);
-    personalNotes = computed(() => this.notes().filter(n => !n.teamId).length);
-    teamNotes = computed(() => this.notes().filter(n => !!n.teamId).length);
+    personalNotes = computed(() => this.notes().filter((n) => !n.teamId).length);
+    teamNotes = computed(() => this.notes().filter((n) => !!n.teamId).length);
 
+    myNote: Note = {
+        id: '1',
+        userId: '101',
+        teamId: 'team-1',
+        articleId: '1003',
+        content: 'The most critical flaw is recorded as CVE-2025-13223 — a type confusion bug that could lead to heap corruption, giving a remote attacker the possibility of arbitrary code execution or causing crashes.',
+        contentType: 'text',
+        imageUrl: '',
+        timestamp: '2025-11-29',
+        metadata: {
+            articleTitle: 'Google issues security fix for Chrome V8 zero-day vulnerability',
+            articleUrl: '/articles/1003',
+            tags: []
+        }
+    };
     ngOnInit(): void {
         // Load data into services (async operations)
         this.userService.loadUsers();

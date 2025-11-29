@@ -1,0 +1,38 @@
+<div class="flex flex-col md:flex-row gap-8">
+    <div class="md:w-1/2">
+        <div class="card flex flex-col gap-4" *ngFor="let item of items">
+            <div class="video-container gap-4">
+                <video
+                    #video
+                    [poster]="'img/'+item.item+'.png'"
+                    playsinline
+                    muted
+                    loop
+                    controls
+                    (mouseenter)="playVideo($event)"
+                    (mouseleave)="pauseVideo($event)">
+                    <source [src]="'video/'+item.item+'.mp4'" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="md:w-1/2">
+        <div class="card flex flex-col gap-4" *ngFor="let item of items2">
+            <div class="video-container gap-4">
+                <video
+                    #video
+                    [poster]="'img/'+item.item+'.png'"
+                    playsinline
+                    muted
+                    loop
+                    controls
+                    (mouseenter)="playVideo($event)"
+                    (mouseleave)="pauseVideo($event)">
+                    <source [src]="'video/'+item.item+'.mp4'" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
