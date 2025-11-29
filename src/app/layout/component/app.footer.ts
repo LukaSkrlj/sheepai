@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
     standalone: true,
     selector: 'app-footer',
     template: `<div class="layout-footer">
-        SAKAI by
-        <a href="https://primeng.org" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline">PrimeNG</a>
+        <img src="/awareai.png" alt="aware.ai logo" class="h-12 w-12 mr-2" />
+        <span class="text-surface-900 dark:text-surface-0 font-bold text-2xl leading-normal mr-20">aware.ai</span>
     </div>`
 })
 export class AppFooter {}

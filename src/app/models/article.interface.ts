@@ -8,4 +8,6 @@ export interface Article {
     link?: string;
     author?: string;
     publishedDate?: string;
+    reelUrl?: string;
+    thumbnail?: string;
 }

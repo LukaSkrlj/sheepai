@@ -6,10 +6,11 @@ import { Notfound } from './app/pages/notfound/notfound';
 import { TeamSettings } from '@/team-settings/team-settings';
 import { UserSettings } from '@/user-settings/user-settings';
 import { AddTopic } from '@/add-topic/add-topic';
-import {ListTopic} from "@/list-topic/list-topic";
+import { ListTopic } from '@/list-topic/list-topic';
 import { Articles } from './app/pages/articles/articles';
 import { ArticleDemo } from './app/pages/article-demo/article-demo';
-import {Notes} from "@/pages/notes/notes";
+import { Notes } from '@/pages/notes/notes';
+import { Reels } from './app/pages/reels/reels';
 
 export const appRoutes: Routes = [
     {
@@ -23,7 +24,8 @@ export const appRoutes: Routes = [
             { path: 'all-topics', component: ListTopic },
             { path: 'articles', component: Articles },
             { path: 'article/:id', component: ArticleDemo },
-            { path: 'notes', component: Notes },
+            { path: 'reels', component: Reels },
+            { path: 'notes', component: Notes }
         ]
     },
     { path: 'landing', component: Landing },
