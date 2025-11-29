@@ -27,7 +27,7 @@ export class AppMenu {
             {
                 label: 'Topics',
                 items: [
-                    { label: 'All topics', icon: 'pi pi-fw pi-hashtag', routerLink: ['/topics'] },
+                    { label: 'All topics', icon: 'pi pi-fw pi-hashtag', routerLink: ['/all-topics'] },
                     { label: 'Add', icon: 'pi pi-fw pi-plus', routerLink: ['/add-topic'] }
                 ]
             },

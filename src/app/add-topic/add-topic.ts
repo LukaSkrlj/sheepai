@@ -12,6 +12,7 @@ import {Checkbox} from "primeng/checkbox";
 import {MultiSelect} from "primeng/multiselect";
 import {Data} from "@/services/data";
 import {toSignal} from "@angular/core/rxjs-interop";
+import {map} from "rxjs/operators";
 
 @Component({
     selector: 'app-add-topic',
@@ -27,8 +28,8 @@ export class AddTopic {
     keyStrict = false;
     webStrict = false;
     #data = inject(Data)
-    teams = toSignal(this.#data.loadData('teams'))
-    users = toSignal(this.#data.loadData('users'))
+    teams = toSignal(this.#data.loadData('teams'));
+    users = toSignal(this.#data.loadData('users'));
     selectedTeams = []
     selectedUsers = []
 
